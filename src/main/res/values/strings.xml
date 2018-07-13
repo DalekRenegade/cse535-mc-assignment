@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">CSE-535 Project 1</string>
+    <string name="text_view_patient_id">Patient ID</string>
+    <string name="text_view_age">Age</string>
+    <string name="text_view_name">Patient Name</string>
+    <string name="text_view_radio_header">Sex</string>
+    <string name="radio_male">Male</string>
+    <string name="radio_female">Female</string>
+    <string name="button_run">RUN</string>
+    <string name="button_stop">STOP</string>
+    <string name="hint_patient_id">14</string>
+    <string name="hint_patient_age">51</string>
+    <string name="hint_patient_name">test</string>
+    <string-array name="frequency">
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>120</item>
+        <item>240</item>
+    </string-array>
+</resources>
