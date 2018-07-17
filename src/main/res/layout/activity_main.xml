@@ -3,11 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/match_all_content_layout"
+    android:id="@+id/layoutRoot"
     android:background="@color/colorAppBackground"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout style="@style/match_width_wrap_height_content_layout">
+    <LinearLayout
+        android:id="@+id/linearLayoutPatient"
+        style="@style/match_width_wrap_height_content_layout">
         <TableLayout
             style="@style/wrap_all_content_layout"
             android:background="@color/colorPatientDetail"
@@ -67,6 +70,7 @@
                 </TableLayout>
 
                 <LinearLayout
+                    android:id="@+id/linearLayoutPatientSexContainer"
                     style="@style/match_width_wrap_height_content_layout"
                     android:layout_marginBottom="5dp"
                     android:layout_marginLeft="5dp"
@@ -74,6 +78,7 @@
                     android:orientation="vertical">
 
                     <LinearLayout
+                        android:id="@+id/linearLayoutPatientSexOptions"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1">
@@ -130,7 +135,9 @@
             android:enabled="false" />
     </LinearLayout>
 
-    <LinearLayout style="@style/match_width_wrap_height_content_layout" >
+    <LinearLayout
+        android:id="@+id/linearLayoutDropdown"
+        style="@style/match_width_wrap_height_content_layout" >
         <Spinner
             android:id="@+id/spinnerFrequency"
             android:layout_width="wrap_content"
@@ -150,6 +157,29 @@
             android:focusableInTouchMode="false"
             android:inputType="none"
             android:padding="5dp" />
+
+        <!--<TextView-->
+            <!--android:id="@+id/textViewtemp"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:foreground="@android:color/background_light"-->
+            <!--android:text="TextView"-->
+            <!--android:textColor="@android:color/background_dark" />-->
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutGraph"
+        style="@style/match_width_wrap_height_content_layout"
+        android:padding="20dp"
+        android:orientation="horizontal" >
+        <!--<com.cse535.assignments.testapplication.GraphView-->
+            <!--android:id="@+id/gvGraph"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@color/colorWhite" />-->
+    </LinearLayout>
+
 
 </android.support.v7.widget.LinearLayoutCompat>
