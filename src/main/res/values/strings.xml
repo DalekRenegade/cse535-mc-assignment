@@ -11,6 +11,8 @@
     <string name="hint_patient_id">14</string>
     <string name="hint_patient_age">51</string>
     <string name="hint_patient_name">test</string>
+    <string name="horizontal_axis_title">Time (Seconds) →</string>
+    <string name="vertical_axis_title">Heart Rate →</string>
     <string-array name="frequency">
         <item>30</item>
         <item>40</item>
