@@ -131,8 +131,7 @@
             android:layout_margin="20px"
             android:background="@color/colorButtonStop"
             android:text="@string/button_stop"
-            android:onClick="onStop"
-            android:enabled="false" />
+            android:onClick="onStop" />
     </LinearLayout>
 
     <LinearLayout
@@ -159,27 +158,23 @@
             android:padding="5dp" />
 
         <!--<TextView-->
-            <!--android:id="@+id/textViewtemp"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="1"-->
-            <!--android:foreground="@android:color/background_light"-->
-            <!--android:text="TextView"-->
-            <!--android:textColor="@android:color/background_dark" />-->
+        <!--android:id="@+id/textViewtemp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:foreground="@android:color/background_light"-->
+        <!--android:text="TextView"-->
+        <!--android:textColor="@android:color/background_dark" />-->
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayoutGraph"
-        style="@style/match_width_wrap_height_content_layout"
-        android:padding="20dp"
-        android:orientation="horizontal" >
-        <!--<com.cse535.assignments.testapplication.GraphView-->
-            <!--android:id="@+id/gvGraph"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_margin="10dp"-->
-            <!--android:background="@color/colorWhite" />-->
-    </LinearLayout>
-
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graph"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stop_graph" />
 
 </android.support.v7.widget.LinearLayoutCompat>
