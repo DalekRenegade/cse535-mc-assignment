@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- System defined colors -->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- User defined colors -->
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorAppBackground">#424242</color>
+    <color name="colorEmptyField">#828282</color>
+    <color name="colorPatientDetail">#F0F0F0</color>
+    <color name="colorButtonRun">#00CC00</color>
+    <color name="colorButtonStop">#E50000</color>
+    <color name="colorButtonUploadDb">#6a4e3a</color>
+    <color name="colorButtonDownloadDb">#add8e6</color>
+    <color name="colorDropDown">#CCCCCC</color>
+    <color name="colorRadioButtonSelected">#0000AA</color>
+</resources>

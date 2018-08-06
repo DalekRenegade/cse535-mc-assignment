@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/match_all_content_layout"
+    android:id="@+id/layoutRoot"
+    android:background="@color/colorAppBackground"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutPatient"
+        style="@style/match_width_wrap_height_content_layout">
+        <TableLayout
+            style="@style/wrap_all_content_layout"
+            android:background="@color/colorPatientDetail"
+            android:padding="5dp">
+
+            <TableRow>
+                <TableLayout>
+                    <TableRow>
+                        <TextView
+                            android:id="@+id/textViewPatientId"
+                            style="@style/text_view_labels"
+                            android:text="@string/text_view_patient_id" />
+                    </TableRow>
+                    <TableRow>
+                        <EditText
+                            android:id="@+id/editTextPatientId"
+                            style="@style/edit_text_input"
+                            android:background="@drawable/edit_text_layout_patient_input"
+                            android:hint="@string/hint_patient_id"
+                            android:focusedByDefault="false" />
+                    </TableRow>
+                </TableLayout>
+
+                <TableLayout>
+                    <TableRow>
+                        <TextView
+                            android:id="@+id/textViewAge"
+                            style="@style/text_view_labels"
+                            android:text="@string/text_view_age" />
+                    </TableRow>
+                    <TableRow>
+                        <EditText
+                            android:id="@+id/editTextAge"
+                            style="@style/edit_text_input"
+                            android:background="@drawable/edit_text_layout_patient_input"
+                            android:hint="@string/hint_patient_age"
+                            android:ems="2"
+                            android:focusedByDefault="false" />
+                    </TableRow>
+                </TableLayout>
+
+                <TableLayout>
+                    <TableRow>
+                        <TextView
+                            android:id="@+id/textViewPatientName"
+                            style="@style/text_view_labels"
+                            android:text="@string/text_view_name" />
+                    </TableRow>
+                    <TableRow>
+                        <EditText
+                            android:id="@+id/editTextPatientName"
+                            style="@style/edit_text_input"
+                            android:background="@drawable/edit_text_layout_patient_input"
+                            android:hint="@string/hint_patient_name"
+                            android:focusedByDefault="false" />
+                    </TableRow>
+                </TableLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPatientSexContainer"
+                    style="@style/match_width_wrap_height_content_layout"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPatientSexOptions"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/radioHeader"
+                            style="@style/text_view_labels"
+                            android:background="@color/colorPatientDetail"
+                            android:paddingRight="5dp"
+                            android:layout_marginLeft="0dp"
+                            android:text="@string/text_view_radio_header" />
+                    </LinearLayout>
+
+                    <RadioGroup
+                        android:id="@+id/radioSex"
+                        style="@style/wrap_all_content_layout"
+                        android:padding="5dp"
+                        android:layout_marginTop="-10dp"
+                        android:elevation="-1dp"
+                        android:orientation="horizontal"
+                        android:background="@drawable/radio_group_layout_patient_sex" >
+
+                        <RadioButton
+                            android:id="@+id/radioMale"
+                            style="@style/wrap_all_content_layout"
+                            android:buttonTint="@color/colorRadioButtonSelected"
+                            android:text="@string/radio_male"
+                            android:checked="true" />
+                        <RadioButton
+                            android:id="@+id/radioFemale"
+                            style="@style/wrap_all_content_layout"
+                            android:buttonTint="@color/colorRadioButtonSelected"
+                            android:text="@string/radio_female" />
+                    </RadioGroup>
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/buttonRun"
+            style="@style/wrap_all_content_layout"
+            android:padding="0dp"
+            android:layout_margin="5dp"
+            android:background="@color/colorButtonRun"
+            android:text="@string/button_run"
+            android:onClick="onRun" />
+        <Button
+            android:id="@+id/buttonStop"
+            style="@style/wrap_all_content_layout"
+            android:padding="0dp"
+            android:layout_margin="5dp"
+            android:background="@color/colorButtonStop"
+            android:text="@string/button_stop"
+            android:onClick="onStop" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDropdown"
+        android:gravity="center_vertical"
+        style="@style/match_width_wrap_height_content_layout" >
+        <Spinner
+            android:id="@+id/spinnerFrequency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/spinner_style"
+            android:entries="@array/frequency" />
+
+        <EditText
+            android:id="@+id/editTextEmpty"
+            style="@style/wrap_all_content_layout"
+            android:layout_margin="5dp"
+            android:background="@drawable/edit_text_layout_empty"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:ems="8"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:inputType="none"
+            android:padding="5dp" />
+        <Button
+            android:id="@+id/buttonUploadDb"
+            style="@style/wrap_all_content_layout"
+            android:padding="0dp"
+            android:layout_margin="5dp"
+            android:background="@color/colorButtonUploadDb"
+            android:enabled="false"
+            android:text="@string/button_upload_db"
+            android:textColor="@color/colorWhite"
+            android:onClick="onUploadClick" />
+        <Button
+            android:id="@+id/buttonDownloadDb"
+            style="@style/wrap_all_content_layout"
+            android:padding="0dp"
+            android:layout_margin="5dp"
+            android:background="@color/colorButtonDownloadDb"
+            android:text="@string/button_download_db"
+            android:onClick="onDownloadClick" />
+    </LinearLayout>
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graph"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stop_graph" />
+
+</android.support.v7.widget.LinearLayoutCompat>
