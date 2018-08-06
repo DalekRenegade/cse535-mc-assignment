@@ -123,6 +123,7 @@
             android:padding="0dp"
             android:layout_margin="5dp"
             android:background="@color/colorButtonRun"
+            android:enabled="false"
             android:text="@string/button_run"
             android:onClick="onRun" />
         <Button
@@ -131,6 +132,7 @@
             android:padding="0dp"
             android:layout_margin="5dp"
             android:background="@color/colorButtonStop"
+            android:enabled="false"
             android:text="@string/button_stop"
             android:onClick="onStop" />
     </LinearLayout>
@@ -174,6 +176,7 @@
             android:padding="0dp"
             android:layout_margin="5dp"
             android:background="@color/colorButtonDownloadDb"
+            android:enabled="false"
             android:text="@string/button_download_db"
             android:onClick="onDownloadClick" />
     </LinearLayout>
