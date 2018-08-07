@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
+//By Karthik
 public class AccelerometerService extends Service implements SensorEventListener {
 
     public static AccelerometerService ServiceObject;

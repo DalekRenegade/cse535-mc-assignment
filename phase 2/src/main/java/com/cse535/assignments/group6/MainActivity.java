@@ -49,9 +49,9 @@ public class MainActivity extends AppCompatActivity implements GraphUpdateCallba
     private boolean serviceInvoked = false;
     private DatabaseHelperClass dbHelper;
 
+    //By Amit
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // -> By Rishabh
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -229,7 +229,7 @@ public class MainActivity extends AppCompatActivity implements GraphUpdateCallba
         gvGraph.getLegendRenderer().setTextSize(25);
         gvGraph.getLegendRenderer().setSpacing(5);
 
-        // set viewport properties      -> By Manish
+        // set viewport properties
         gvGraph.getViewport().setXAxisBoundsManual(true);
         gvGraph.getViewport().setYAxisBoundsManual(true);
         gvGraph.getViewport().setMinX(0);
@@ -253,48 +253,6 @@ public class MainActivity extends AppCompatActivity implements GraphUpdateCallba
         gvGraph.getGridLabelRenderer().setGridColor(Color.WHITE);
 
         gvGraph.getGridLabelRenderer().reloadStyles();
-    }
-
-    // By Manish
-    public void onRun(View v) {
-        String toastMsg = "RUNNING";
-        PatientInfo info = verifyPatientInfo();
-        setButtonState(uploadButton, false);
-        setButtonState(downloadButton, false);
-        setButtonState(runButton, false);
-        if (info != null) {
-            try {
-//                HelperClass.setDb(this, info);
-                dbHelper.createPatientTable(info.toString());
-                Toast.makeText(getApplicationContext(), dbHelper.getDbPath(), Toast.LENGTH_LONG).show();
-                Intent startIntent = new Intent(MainActivity.this, AccelerometerService.class);
-                startService(startIntent);
-                serviceInvoked = true;
-            } catch (Exception ex) {
-                Log.e(this.getClass().getName(), ex.getMessage());
-                toastMsg = "Run failed";
-            } finally {
-                Toast.makeText(getApplicationContext(), toastMsg, Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
-    //By Varun
-    public void onStop(View v) {
-        String toastMsg = "STOPPED";
-        try {
-            Intent stopIntent = new Intent(MainActivity.this, AccelerometerService.class);
-            stopService(stopIntent);
-        } catch (Exception ex) {
-            Log.e(this.getClass().getName(), ex.getMessage());
-            toastMsg = "Error'ed stop";
-        } finally {
-            setButtonState(uploadButton, serviceInvoked);
-            setButtonState(downloadButton, true);
-            setButtonState(runButton, true);
-            Toast.makeText(getApplicationContext(), toastMsg, Toast.LENGTH_SHORT).show();
-        }
-        controlGraph(false, null);
     }
 
     public void onUploadClick(View v) {
@@ -377,7 +335,46 @@ public class MainActivity extends AppCompatActivity implements GraphUpdateCallba
         }
     }
 
-    // -> By Amit
+    //By Rishabh
+    public void onRun(View v) {
+        String toastMsg = "RUNNING";
+        PatientInfo info = verifyPatientInfo();
+        if (info != null) {
+            try {
+                setButtonState(uploadButton, false);
+                setButtonState(downloadButton, false);
+                setButtonState(runButton, false);
+                dbHelper.createPatientTable(info.toString());
+                Toast.makeText(getApplicationContext(), dbHelper.getDbPath(), Toast.LENGTH_LONG).show();
+                Intent startIntent = new Intent(MainActivity.this, AccelerometerService.class);
+                startService(startIntent);
+                serviceInvoked = true;
+            } catch (Exception ex) {
+                Log.e(this.getClass().getName(), ex.getMessage());
+                toastMsg = "Run failed";
+            } finally {
+                Toast.makeText(getApplicationContext(), toastMsg, Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    public void onStop(View v) {
+        String toastMsg = "STOPPED";
+        try {
+            Intent stopIntent = new Intent(MainActivity.this, AccelerometerService.class);
+            stopService(stopIntent);
+        } catch (Exception ex) {
+            Log.e(this.getClass().getName(), ex.getMessage());
+            toastMsg = "Error'ed stop";
+        } finally {
+            setButtonState(uploadButton, serviceInvoked);
+            setButtonState(downloadButton, true);
+            setButtonState(runButton, true);
+            Toast.makeText(getApplicationContext(), toastMsg, Toast.LENGTH_SHORT).show();
+        }
+        controlGraph(false, null);
+    }
+
     @Override
     public void controlGraph(boolean execution, AccelerometerData data) {
 

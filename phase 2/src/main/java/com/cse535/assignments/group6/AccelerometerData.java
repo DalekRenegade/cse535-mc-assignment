@@ -3,6 +3,7 @@ package com.cse535.assignments.group6;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 
+//By Karthik
 public class AccelerometerData implements Serializable {
     private long timestamp;
     private double x, y, z;

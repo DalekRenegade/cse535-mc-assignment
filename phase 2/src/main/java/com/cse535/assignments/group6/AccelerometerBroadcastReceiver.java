@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
+//By Karthik
 public class AccelerometerBroadcastReceiver extends BroadcastReceiver {
 
     GraphUpdateCallback callback = null;
