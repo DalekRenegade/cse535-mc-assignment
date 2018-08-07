@@ -2,13 +2,12 @@ package com.cse535.assignments.group6;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class AccelerometerData implements Serializable {
-    private Date timestamp;
+    private long timestamp;
     private double x, y, z;
 
-    public AccelerometerData(Date timestamp, double x, double y, double z) {
+    public AccelerometerData(long timestamp, double x, double y, double z) {
         this.timestamp = timestamp;
         this.x = x;
         this.y = y;
@@ -16,7 +15,7 @@ public class AccelerometerData implements Serializable {
     }
 
 
-    public Date getTimestamp() {
+    public long getTimestamp() {
         return timestamp;
     }
 
@@ -34,6 +33,6 @@ public class AccelerometerData implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("%s_%.2f_%.2f_%.2f", (new SimpleDateFormat(Constants.DATE_FORMAT)).format(this.timestamp), this.x, this.y, this.z);
+        return String.format("%d_%.2f_%.2f_%.2f", (new SimpleDateFormat(Constants.DATE_FORMAT)).format(this.timestamp), this.x, this.y, this.z);
     }
 }
